@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2027考研政治｜三套模拟卷共性考点完整手册</title>
+<script>
+(function () {
+  var root = document.documentElement;
+  function readSaved() {
+    try { return localStorage.getItem('politics-site-theme'); } catch (e) { return null; }
+  }
+  function apply() {
+    var saved = readSaved();
+    var dark = saved === 'dark';
+    if (saved !== 'dark' && saved !== 'light') {
+      dark = !!(window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches);
+    }
+    if (dark) root.setAttribute('data-theme', 'dark');
+    else root.removeAttribute('data-theme');
+  }
+  apply();
+  window.addEventListener('storage', function (e) {
+    if (e.key === 'politics-site-theme' || e.key === null) apply();
+  });
+  if (window.matchMedia) {
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    var onChange = function () {
+      var saved = readSaved();
+      if (!saved || saved === 'auto') apply();
+    };
+    if (mq.addEventListener) mq.addEventListener('change', onChange);
+    else if (mq.addListener) mq.addListener(onChange);
+  }
+})();
+</script>
+
+<style>
+:root{
+  color-scheme:light;
+  --paper:#FBF9F4; --ink:#20242A; --ink2:#585349; --muted:#736D60;
+  --red:#A32B2B; --line:#E0DACC; --soft:#F2ECE0;
+  --serif:"Songti SC","Noto Serif CJK SC","Source Han Serif SC","STSong","SimSun",serif;
+  --sans:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font:15px/1.9 var(--sans);
+  background-image:radial-gradient(rgba(31,78,107,.035) 1px,transparent 1px);
+  background-size:22px 22px; -webkit-font-smoothing:antialiased;
+}
+.doc{max-width:860px;margin:0 auto;padding:44px 30px 90px}
+.doc-title{
+  font-family:var(--serif);font-size:29px;line-height:1.4;font-weight:600;
+  color:var(--red);letter-spacing:.02em;margin:0 0 12px;
+}
+.doc-subtitle{
+  font-size:12.5px;color:var(--muted);line-height:1.9;
+  margin:0 0 30px;padding-bottom:22px;border-bottom:2px solid var(--line);
+}
+h2{
+  font-family:var(--serif);font-size:22px;font-weight:600;letter-spacing:.03em;
+  color:var(--red);margin:44px 0 14px;padding:0 0 8px 12px;
+  border-left:4px solid var(--red);border-bottom:1px solid var(--line);
+}
+h3{
+  font-family:var(--serif);font-size:18.5px;font-weight:600;
+  margin:30px 0 10px;color:var(--ink);letter-spacing:.02em;
+}
+h4{
+  font-size:15.5px;font-weight:700;color:#7A2A38;
+  margin:22px 0 8px;letter-spacing:.01em;
+}
+h5{font-size:14.5px;font-weight:700;color:var(--ink2);margin:18px 0 6px}
+p{margin:0 0 8px}
+strong{color:#7A2A38;font-weight:700}
+em{font-style:italic;color:#6B3B24}
+u{text-decoration:underline;text-underline-offset:3px}
+.doc-subtitle strong{color:var(--ink2)}
+.doc-list{margin:6px 0 14px;padding-left:1.4em}
+.doc-list li{margin:4px 0;padding-left:2px;line-height:1.85}
+.doc-list li::marker{color:var(--red)}
+.hl{padding:0 2px;border-radius:2px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.hl-yellow{background:#FFE98A}
+.hl-green{background:#C9EBD6}
+.hl-cyan{background:#CDEFF2}
+.hl-magenta{background:#F6D3E1}
+.center{text-align:center}
+.right{text-align:right}
+.justify{text-align:justify}
+table{
+  width:100%;border-collapse:collapse;margin:12px 0 20px;
+  font-size:14px;background:#FFFDF9;
+}
+th,td{border:1px solid #DED7C8;padding:7px 10px;text-align:left;vertical-align:top;line-height:1.75}
+th{background:#EFE9DC;color:var(--ink);font-weight:700;letter-spacing:.02em}
+td.shade{background:#E9EFF7 !important}
+td strong{color:#7A2A38}
+@media (max-width:600px){
+  .doc{padding:26px 18px 64px}
+  .doc-title{font-size:22px}
+  h2{font-size:19px;margin-top:34px}
+  h3{font-size:17px}
+  table{font-size:13px}
+  th,td{padding:6px 7px}
+}
+@media print{body{background:#fff}.doc{max-width:none;padding:0}}
+
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#15171B; --ink:#E9E4D8; --ink2:#B4AEA1; --muted:#958F83;
+  --red:#D97878; --line:#363A42; --soft:#22262B;
+}
+[data-theme="dark"] body{
+  background-image:radial-gradient(rgba(180,196,210,.06) 1px, transparent 1px);
+}
+[data-theme="dark"] h4{color:#E79A9A}
+[data-theme="dark"] strong{color:#E79A9A}
+[data-theme="dark"] .doc-subtitle strong{color:var(--ink2)}
+[data-theme="dark"] em{color:#D8A98A}
+[data-theme="dark"] table{background:#1B1E23}
+[data-theme="dark"] th{background:#282C33}
+[data-theme="dark"] th,[data-theme="dark"] td{border-color:#363A42}
+[data-theme="dark"] td.shade{background:#25303B !important}
+[data-theme="dark"] td strong{color:#E79A9A}
+[data-theme="dark"] .hl-yellow{background:#6A5A1E;color:#F5E9B8}
+[data-theme="dark"] .hl-green{background:#1F4A32;color:#C9EBD6}
+[data-theme="dark"] .hl-cyan{background:#17454C;color:#CDEFF2}
+[data-theme="dark"] .hl-magenta{background:#4C2333;color:#F6D3E1}
+
+
+@media print{
+  :root,:root[data-theme="dark"]{
+    color-scheme:light;
+    --paper:#fff; --ink:#111; --ink2:#333; --muted:#555;
+    --red:#8f1f1f; --line:#bbb; --soft:#f2f2f2;
+  }
+  [data-theme="dark"] body{background:#fff !important;background-image:none !important;color:#111 !important}
+  [data-theme="dark"] h4,[data-theme="dark"] strong,
+  [data-theme="dark"] td strong{color:#7A2A38 !important}
+  [data-theme="dark"] em{color:#6B3B24 !important}
+  [data-theme="dark"] table{background:#fff !important}
+  [data-theme="dark"] th{background:#efefef !important}
+  [data-theme="dark"] th,[data-theme="dark"] td{border-color:#bbb !important}
+  [data-theme="dark"] td.shade{background:#eee !important}
+  [data-theme="dark"] .hl-yellow{background:#FFE98A !important;color:inherit !important}
+  [data-theme="dark"] .hl-green{background:#C9EBD6 !important;color:inherit !important}
+  [data-theme="dark"] .hl-cyan{background:#CDEFF2 !important;color:inherit !important}
+  [data-theme="dark"] .hl-magenta{background:#F6D3E1 !important;color:inherit !important}
+  .doc{max-width:none;padding:0}
+  h2,h3,h4{break-after:avoid}
+  table,.doc-list li,p{break-inside:avoid}
+}
+
+</style>
+</head>
+<body>
+<article class="doc">
+<h1 class="doc-title">2027考研政治｜三套模拟卷共性考点完整手册</h1>
+<p class="doc-subtitle center">基于：徐涛10套卷 + 米鹏6套卷 + 腿姐8套卷 + 一页纸 + 必背考点390条 + 修齐十页纸<span style="color:#003366"><strong><br></strong></span><span style="color:#003366"><strong><br></strong></span><span style="color:#003366"><strong>作者：林小理 | 2027考研专属</strong></span></p>
+<h2>第一部分 马克思主义基本原理</h2>
+<h3>一、马哲总论</h3>
+<h4>考点1：马克思主义的创立与发展</h4>
+<ul class="doc-list">
+<li>【第一题常考】世界上第一个无产阶级政党：共产主义者同盟</li>
+<li>马克思主义公开问世的标志：《共产党宣言》发表（1848年2月）</li>
+<li>马克思主义产生的思想渊源：德国古典哲学、英国古典政治经济学、英法空想社会主义</li>
+<li>马克思主义的本质属性：人民性</li>
+<li>马克思主义理论区别于其他理论的根本特征：实践性</li>
+<li>马克思主义新世界观创立的关键：确立科学的实践观</li>
+<li>马克思主义基本特征一句话概括：科学性与革命性的统一</li>
+<li>马克思一生的两个伟大发现：唯物史观和剩余价值学说</li>
+<li>社会主义由空想变为科学的两大基石：唯物史观和剩余价值学说</li>
+<li>【真题考法】《共产党宣言》发表标志着什么？→ 马克思主义公开问世、科学社会主义诞生</li>
+</ul>
+<h4>考点2：马克思主义经典著作（高频选择题）</h4>
+<table><thead><tr><td><strong>著作</strong></td><td><strong>核心意义（必背）</strong></td></tr></thead><tbody><tr><td class="shade" style="background:#D3DFEE"><strong>《德法年鉴》</strong></td><td class="shade" style="background:#D3DFEE">完成两个转变（唯心→唯物，革命民主主义→共产主义），为创立马克思主义奠定思想前提</td></tr><tr><td><strong>《神圣家族》</strong></td><td>马克思恩格斯合著的第一部著作</td></tr><tr><td class="shade" style="background:#D3DFEE"><strong>《德意志意识形态》</strong></td><td class="shade" style="background:#D3DFEE">首次系统阐述历史唯物主义基本观点</td></tr><tr><td><strong>《共产党宣言》</strong></td><td>标志马克思主义公开问世、科学社会主义诞生</td></tr><tr><td class="shade" style="background:#D3DFEE"><strong>《资本论》</strong></td><td class="shade" style="background:#D3DFEE">被称为"工人阶级的圣经"，系统阐述剩余价值理论</td></tr><tr><td><strong>《关于费尔巴哈的提纲》</strong></td><td>首次提出科学的实践观</td></tr><tr><td class="shade" style="background:#D3DFEE"><strong>《反杜林论》</strong></td><td class="shade" style="background:#D3DFEE">全面阐述马克思主义理论体系，被称为"马克思主义的百科全书"</td></tr><tr><td><strong>《哥达纲领批判》</strong></td><td>对未来社会发展阶段和分配原则作了原则构想</td></tr><tr><td class="shade" style="background:#D3DFEE"><strong>《法兰西内战》</strong></td><td class="shade" style="background:#D3DFEE">科学总结巴黎公社历史经验</td></tr></tbody></table>
+<h4>考点3：六个"寓于"（选择题必背，三套卷都考）</h4>
+<ul class="doc-list">
+<li>价值寓于使用价值之中</li>
+<li>必然性寓于偶然性之中</li>
+<li>斗争性寓于同一性之中</li>
+<li>绝对性寓于相对性之中</li>
+<li>普遍性寓于特殊性之中</li>
+<li>共性寓于个性之中</li>
+<li>【口诀】六个寓于：价必斗绝共普</li>
+</ul>
+<h4>考点4：物质世界的二重化（2027新增考点）</h4>
+<ul class="doc-list">
+<li><span class="hl hl-yellow">人类改造世界的实践活动使世界发生二重分化</span>：✅</li>
+<li>①从自然界中分化出人类社会</li>
+<li>②从客观世界中分化出主观世界</li>
+<li><span class="hl hl-yellow">人类实践使世界二重化为现实世界与虚拟世界</span><span class="hl hl-yellow">❌</span></li>
+<li>人的实践活动是自然界与人类社会、客观世界与主观世界相分化的关键，也是它们相统一的关键</li>
+<li>人类社会是最高级的物质存在形态</li>
+<li>自然界与人类社会的不同：自然界中一切自发产生；人类社会中一切打着人的意识印记</li>
+<li>"人化自然"：经过人的改造并体现着人的目的和意志的自然</li>
+<li>主观世界具有相对独立性，但从属于客观世界</li>
+<li>【真题考法】AI生成内容、虚拟世界 → 物质世界二重化</li>
+</ul>
+<p><br></p>
+<h3>二、认识论</h3>
+<h4>考点5：实践与认识</h4>
+<ul class="doc-list">
+<li>实践是检验真理的唯一标准</li>
+<li>实践高于理论的认识，因为实践具有直接现实性</li>
+<li>实践是横跨物质和意识之间有且仅有的唯一桥梁</li>
+<li>实践的主体和客体具有实践关系、认识关系和价值关系，其中实践关系是最根本的关系</li>
+<li>实践的基本类型：物质生产实践（最基本）、社会政治实践、科学文化实践</li>
+<li>虚拟实践是实践活动的派生形式，具有相对独立性</li>
+<li>认识过程的第二次飞跃（从理性认识到实践）是更为重要的飞跃</li>
+</ul>
+<h4>考点6：真理与价值</h4>
+<ul class="doc-list">
+<li>真理与谬误在一定范围内的对立是绝对的，超出一定范围就会相互转化</li>
+<li>认识必然和争取自由是人类认识世界和改造世界的根本目标</li>
+<li>由必然到自由表现为人类不断地从必然王国走向自由王国的过程</li>
+<li>人类认识包括知识性认识（求"真"）与评价性认识（求"善"和"美"）</li>
+<li>人生价值评价的根本尺度是历史标准</li>
+</ul>
+<h4>考点7：人工智能与意识（2027超高频时政）</h4>
+<ul class="doc-list">
+<li>人工智能是人的意识能动性的一种特殊表现，是人的本质力量的对象化、现实化</li>
+<li>人工智能的出现表明人类意识已经发展到能够把意识活动部分地从人脑中分离出来</li>
+<li>即使最强大的智能机器，也达不到人类智能的层级，无法真正具有人的意识</li>
+<li>人工智能不可能取代或超越人类智能的四个原因：</li>
+<li>①人类意识是知情意的统一体，AI只是对理性智能的模拟，不具备情感、信念、意志</li>
+<li>②社会性是人的意识所固有的本质属性，AI不可能真正具备人类的社会属性</li>
+<li>③人类自然语言是思维的物质外壳，AI难以完全理解自然语言的真实意义</li>
+<li>④AI能获得可以化约为数字信号的内容，但人脑中总有许多东西无法被化约</li>
+<li>【真题考法】AI监管、生成式AI → 实践与认识的关系、真理尺度与价值尺度统一</li>
+</ul>
+<p><br></p>
+<h3>三、政治经济学</h3>
+<h4>考点8：商品经济基础</h4>
+<ul class="doc-list">
+<li>理解政治经济学的枢纽：劳动二重性理论</li>
+<li>决定商品价值量的是社会必要劳动时间，不是个别劳动时间</li>
+<li>货币的本质：固定充当一般等价物的商品</li>
+<li>货币五种职能：价值尺度、流通手段、贮藏手段、支付手段、世界货币</li>
+<li>货币最基本的职能：价值尺度和流通手段</li>
+<li>私有制商品经济的基本矛盾：私人劳动和社会劳动的矛盾</li>
+<li>私人劳动和社会劳动的矛盾是商品经济其他一切矛盾的基础</li>
+<li>商品经济的基本矛盾决定着商品生产者的命运</li>
+</ul>
+<h4>考点9：剩余价值理论</h4>
+<ul class="doc-list">
+<li>货币转化为资本的条件：劳动力成为商品</li>
+<li>雇佣劳动者的剩余劳动是剩余价值产生的唯一源泉</li>
+<li>剩余价值是利润的本质，利润是剩余价值的转化形式</li>
+<li>资本主义工资的本质：劳动力的价值或价格</li>
+<li>工资模糊了必要劳动和剩余劳动的界限，掩盖了剥削关系</li>
+<li>资本积累的源泉：剩余价值</li>
+<li>资本积累是资本主义扩大再生产的源泉</li>
+<li>资本有机构成呈现不断提高的趋势（由资本无限追逐剩余价值的本性决定）</li>
+<li>不变资本(c)：以生产资料形态存在，不发生价值增殖</li>
+<li>可变资本(v)：用来购买劳动力，剩余价值是由可变资本创造的</li>
+</ul>
+<h4>考点10：超额剩余价值与相对剩余价值</h4>
+<ul class="doc-list">
+<li>单个资本家改进技术、改善管理的主观动机：追求超额剩余价值</li>
+<li>客观后果：整个社会劳动生产率普遍提高，资本家阶级普遍获得相对剩余价值</li>
+<li>超额剩余价值：个别资本家、原因、暂时</li>
+<li>相对剩余价值：整个社会、结果、长期</li>
+<li>平均利润的形成：不同生产部门资本家之间的竞争</li>
+<li>超额利润的形成：同一部门内不同企业之间的竞争</li>
+<li>平均利润形成后，商品价值转化为生产价格，价值规律实现形式发生变化</li>
+</ul>
+<h4>考点11：垄断与金融寡头</h4>
+<ul class="doc-list">
+<li>金融寡头在经济领域实现统治的形式："参与制"（股票）</li>
+<li>金融寡头在政治领域实现统治的形式："个人联合"</li>
+<li>金融寡头左右内政外交与社会生活：建立政策咨询机构，掌握新闻科教文化</li>
+<li>垄断利润归根到底来自无产阶级和其他劳动人民创造的剩余价值</li>
+<li>垄断利润主要通过垄断价格实现</li>
+<li>金融资本形成的主要途径：金融联系、资本参与、人事参与</li>
+<li>金融垄断资本形成壮大的重要制度条件：金融自由化与金融创新</li>
+</ul>
+<h4>考点12：当代资本主义新变化（2027超高频）</h4>
+<ul class="doc-list">
+<li>当今资本主义社会居主导地位的资本所有制形式：法人资本所有制</li>
+<li>法人资本所有制特点：资本占有主体多元化，所有权与控制权不再统一</li>
+<li>劳资关系新变化：职工参与决策、终身雇佣、职工持股、社会福利普及化</li>
+<li>当代资本主义最突出、最鲜明、最主要的特征：国际金融资本的垄断</li>
+<li>国际金融垄断资本主义影响日益显现：</li>
+<li>①金融垄断寡头化</li>
+<li>②金融垄断国际化</li>
+<li>③经济虚拟化、产业空心化</li>
+<li>科技创新加速资本主义生产方式变化：</li>
+<li>①产业结构的调整</li>
+<li>②生产组织和劳动形式的变化</li>
+<li>③新经济形态的出现</li>
+<li>社会阶级层级结构呈现复杂性、多样化</li>
+<li>发达资本主义国家凭借经济科技文化优势推行霸权主义和强权政治</li>
+<li>【真题考法】欧美金融危机、美元美债危机 → 资本主义经济危机</li>
+</ul>
+<h4>考点13：经济全球化</h4>
+<ul class="doc-list">
+<li>经济全球化迅猛发展的根本原因：科学技术进步和生产力发展</li>
+<li>垄断资本向世界范围扩展的基本形式：借贷资本输出、生产资本输出、商品资本输出</li>
+<li>早期国际垄断同盟：国际卡特尔</li>
+<li>当代国际垄断同盟：国家垄断资本主义的国际联盟</li>
+<li>三大国际经济协调组织：国际货币基金组织、世界银行、世界贸易组织</li>
+</ul>
+<p><br></p>
+<h2>第二部分 毛泽东思想和中国特色社会主义理论体系</h2>
+<h3>一、毛泽东思想</h3>
+<h4>考点14：毛泽东思想形成发展各时期著作</h4>
+<h5>萌芽时期（大革命时期）</h5>
+<ul class="doc-list">
+<li>《中国社会各阶级的分析》：提出"谁是我们的敌人？谁是我们的朋友？"革命首要问题</li>
+<li>《国民革命与农民运动》</li>
+<li>《湖南农民运动考察报告》</li>
+<li>标志：关于新民主主义革命基本思想的提出</li>
+</ul>
+<h5>初步形成时期（土地革命时期）</h5>
+<ul class="doc-list">
+<li>《中国的红色政权为什么能够存在？》《井冈山的斗争》：论证红色政权存在条件，提出工农武装割据思想</li>
+<li>《星星之火，可以燎原》：回答"红旗到底打得多久"的疑问</li>
+<li>《反对本本主义》：提出"没有调查，没有发言权"；独立自主思想的最初明确表述</li>
+<li>标志：农村包围城市、武装夺取政权道路理论的提出</li>
+</ul>
+<h5>成熟时期（遵义会议后至抗日战争）</h5>
+<ul class="doc-list">
+<li>《实践论》《矛盾论》：奠定哲学基础</li>
+<li>《〈共产党人〉发刊词》：三大法宝</li>
+<li>《中国革命和中国共产党》：第一次提出新民主主义革命科学概念</li>
+<li>《新民主主义论》：系统阐述新民主主义理论</li>
+<li>《论联合政府》：三大优良作风；新民主主义基本纲领</li>
+<li>标志：新民主主义理论的系统阐明</li>
+</ul>
+<h5>继续发展时期（建国后）</h5>
+<ul class="doc-list">
+<li>《论人民民主专政》：人民民主专政理论完整论述</li>
+<li>《论十大关系》：开始探索适合中国情况的社会主义建设道路；调动一切积极因素</li>
+<li>《关于正确处理人民内部矛盾的问题》：社会主义社会矛盾学说</li>
+</ul>
+<h4>考点15：三大法宝与三大优良作风</h4>
+<ul class="doc-list">
+<li>三大法宝：统一战线、武装斗争、党的建设（《〈共产党人〉发刊词》）</li>
+<li>三大优良作风：理论联系实际、密切联系群众、批评与自我批评（中共七大《论联合政府》）</li>
+<li>工农武装割据三方面：土地革命、武装斗争、根据地建设</li>
+<li>毛泽东思想活的灵魂：实事求是、群众路线、独立自主（十一届六中全会）</li>
+<li>实事求是是毛泽东思想的精髓</li>
+</ul>
+<p><br></p>
+<h3>二、邓小平理论</h3>
+<h4>考点16：邓小平理论形成发展</h4>
+<ul class="doc-list">
+<li>十二大：第一次提出"建设有中国特色的社会主义"命题</li>
+<li>十三大：系统论述社会主义初级阶段理论；概括"一个中心两个基本点"基本路线；邓小平理论轮廓形成</li>
+<li>南方谈话：邓小平理论的集大成之作，标志邓小平理论走向成熟</li>
+<li>十五大：邓小平理论确立为党的指导思想</li>
+<li>解放思想、实事求是是邓小平理论的精髓</li>
+<li>党的基本路线是党和国家的生命线、人民的幸福线</li>
+<li>四项基本原则是立国之本</li>
+<li>改革开放是强国之路</li>
+</ul>
+<p><br></p>
+<h2>第三部分 习近平新时代中国特色社会主义思想</h2>
+<h3>一、马克思主义中国化时代化</h3>
+<h4>考点17：两个结合与三次飞跃</h4>
+<ul class="doc-list">
+<li>推进马克思主义中国化时代化，是马克思主义理论本身发展的内在要求，是解决中国实际问题的客观需要</li>
+<li>两个结合：</li>
+<li>①把马克思主义基本原理同中国具体实际相结合</li>
+<li>②把马克思主义基本原理同中华优秀传统文化相结合</li>
+<li>魂脉：马克思主义</li>
+<li>根脉：中华优秀传统文化</li>
+<li>马克思主义中国化三次飞跃：</li>
+<li>①毛泽东思想（中共七大）</li>
+<li>②中国特色社会主义理论体系（改革开放后）</li>
+<li>③习近平新时代中国特色社会主义思想（新的飞跃）</li>
+<li>六届六中全会《论新阶段》：首次提出"马克思主义中国化"命题</li>
+</ul>
+<h3>二、中国式现代化</h3>
+<h4>考点18：中国式现代化（分析题大题）</h4>
+<ul class="doc-list">
+<li>五个特征：</li>
+<li>①人口规模巨大的现代化</li>
+<li>②全体人民共同富裕的现代化</li>
+<li>③物质文明和精神文明相协调的现代化</li>
+<li>④人与自然和谐共生的现代化</li>
+<li>⑤走和平发展道路的现代化</li>
+<li>全体人民共同富裕是中国式现代化区别于西方现代化的显著标志</li>
+<li>中国式现代化是中国共产党领导的社会主义现代化</li>
+<li>为什么强调党在中国式现代化建设中的领导地位：</li>
+<li>①党的领导决定中国式现代化的根本性质</li>
+<li>②党的领导确保中国式现代化锚定奋斗目标行稳致远</li>
+<li>③党的领导激发建设中国式现代化的强劲动力</li>
+</ul>
+<h3>三、高质量发展与新发展格局</h3>
+<h4>考点19：高质量发展</h4>
+<ul class="doc-list">
+<li>高质量发展是全面建设社会主义现代化国家的首要任务</li>
+<li>推动高质量发展的必由之路：加快实现高水平科技自立自强</li>
+<li>推动高质量发展的主线：深化供给侧结构性改革</li>
+<li>推动高质量发展的必然要求：推进农业现代化</li>
+<li>推动高质量发展的战略基点：加快构建新发展格局</li>
+<li>推动高质量发展的最终目的：人民幸福安康</li>
+</ul>
+<h4>考点20：新发展理念</h4>
+<table><thead><tr><td><strong>理念</strong></td><td><strong>定位</strong></td></tr></thead><tbody><tr><td class="shade" style="background:#D3DFEE"><strong>创新</strong></td><td class="shade" style="background:#D3DFEE">引领发展的第一动力</td></tr><tr><td><strong>协调</strong></td><td>持续健康发展的内在要求</td></tr><tr><td class="shade" style="background:#D3DFEE"><strong>绿色</strong></td><td class="shade" style="background:#D3DFEE">永续发展的必要条件</td></tr><tr><td><strong>开放</strong></td><td>国家繁荣发展的必由之路</td></tr><tr><td class="shade" style="background:#D3DFEE"><strong>共享</strong></td><td class="shade" style="background:#D3DFEE">中国特色社会主义的本质要求</td></tr></tbody></table>
+<h4>考点21：新发展格局</h4>
+<ul class="doc-list">
+<li>内涵：以国内大循环为主体、国内国际双循环相互促进</li>
+<li>基本立足点：满足国内需求</li>
+<li>战略基点：扩大内需</li>
+<li>主线：深化供给侧结构性改革</li>
+<li>最本质特征：实现高水平自立自强</li>
+<li>战略方向：坚持供给侧结构性改革</li>
+<li>关键：经济循环畅通无阻</li>
+<li>战略支撑：科技自立自强</li>
+</ul>
+<h4>考点22：新质生产力（2027超高频时政）</h4>
+<ul class="doc-list">
+<li>新质生产力是创新起主导作用，摆脱传统经济增长方式、生产力发展路径，具有高科技、高效能、高质量特征</li>
+<li>特点：创新、质优</li>
+<li>关键：质的有效提升和量的合理增长</li>
+<li>本质：先进生产力的质的飞跃</li>
+<li>核心要素：科技创新</li>
+<li>着力点：以科技创新引领现代化产业体系建设</li>
+<li>【真题考法】国家创新指数报告、中科院科技突破 → 新质生产力、科技自立自强</li>
+</ul>
+<p><br></p>
+<h3>四、全面依法治国</h3>
+<h4>考点23：全面依法治国总目标与总抓手</h4>
+<ul class="doc-list">
+<li>总目标：建设中国特色社会主义法治体系、建设社会主义法治国家</li>
+<li>总抓手：建设中国特色社会主义法治体系</li>
+</ul>
+<h4>考点24：法治体系五大内容</h4>
+<table><thead><tr><td><strong>内容</strong></td><td><strong>定位</strong></td></tr></thead><tbody><tr><td class="shade" style="background:#D3DFEE"><strong>完备的法律规范体系</strong></td><td class="shade" style="background:#D3DFEE">前提</td></tr><tr><td><strong>高效的法治实施体系</strong></td><td>重点</td></tr><tr><td class="shade" style="background:#D3DFEE"><strong>严密的法治监督体系</strong></td><td class="shade" style="background:#D3DFEE">重要保障</td></tr><tr><td><strong>有力的法治保障体系</strong></td><td>重要依托</td></tr><tr><td class="shade" style="background:#D3DFEE"><strong>完善的党内法规体系</strong></td><td class="shade" style="background:#D3DFEE">本质要求</td></tr></tbody></table>
+<h4>考点25：全面依法治国十六字方针</h4>
+<table><thead><tr><td><strong>方针</strong></td><td><strong>定位</strong></td></tr></thead><tbody><tr><td class="shade" style="background:#D3DFEE"><strong>科学立法</strong></td><td class="shade" style="background:#D3DFEE">前提</td></tr><tr><td><strong>严格执法</strong></td><td>关键</td></tr><tr><td class="shade" style="background:#D3DFEE"><strong>公正司法</strong></td><td class="shade" style="background:#D3DFEE">重点</td></tr><tr><td><strong>全民守法</strong></td><td>基础</td></tr></tbody></table>
+<h4>考点26：权利保障四个层次</h4>
+<table><thead><tr><td><strong>保障类型</strong></td><td><strong>定位</strong></td></tr></thead><tbody><tr><td class="shade" style="background:#D3DFEE"><strong>宪法保障</strong></td><td class="shade" style="background:#D3DFEE">前提和基础</td></tr><tr><td><strong>立法保障</strong></td><td>重要条件</td></tr><tr><td class="shade" style="background:#D3DFEE"><strong>行政保护</strong></td><td class="shade" style="background:#D3DFEE">关键环节</td></tr><tr><td><strong>司法保障</strong></td><td>最后防线</td></tr></tbody></table>
+<p><br></p>
+<h3>五、党的领导与党的建设</h3>
+<ul class="doc-list">
+<li>中国特色社会主义最本质的特征：中国共产党领导</li>
+<li>中国特色社会主义制度的最大优势：中国共产党领导</li>
+<li>党的领导是人民当家作主和依法治国的根本保证</li>
+<li>党的政治建设是根本性建设，摆在首位</li>
+<li>党的政治建设的首要任务：保证全党服从中央，维护党中央权威和集中统一领导</li>
+<li>新时代党的建设主线：加强党的长期执政能力建设、先进性和纯洁性建设</li>
+<li>勇于自我革命是中国共产党区别于其他政党的最显著标志</li>
+<li>反腐败是最彻底的自我革命</li>
+<li>党的最大政治优势：密切联系群众</li>
+<li>群众路线是我们党的生命线和根本工作路线</li>
+</ul>
+<h3>六、总体国家安全观</h3>
+<ul class="doc-list">
+<li>以人民安全为宗旨</li>
+<li>以政治安全为根本</li>
+<li>以经济安全为基础</li>
+<li>以军事、科技、文化、社会安全为保障</li>
+<li>以促进国际安全为依托</li>
+<li>国家安全是民族复兴的根基，社会稳定是国家强盛的前提</li>
+<li>构建新安全格局必须把政治安全放在首要位置</li>
+</ul>
+<h3>七、生态文明与美丽中国</h3>
+<ul class="doc-list">
+<li>"十四五"生态文明建设：以降碳为重点战略方向</li>
+<li>碳达峰、碳中和目标融入生态文明体系</li>
+<li>建设美丽中国是厚植中国式现代化绿色底色的必由之路</li>
+<li>建设美丽中国是实现高质量发展的应有之义</li>
+<li>建设美丽中国是共建清洁美丽世界的中国贡献</li>
+<li>【真题考法】"十四五"美丽中国建设1+1+N体系 → 人与自然和谐共生</li>
+</ul>
+<p><br></p>
+<h2>第四部分 中国近现代史纲要</h2>
+<h3>一、重要会议（25个核心会议）</h3>
+<table><thead><tr><td><strong>会议</strong></td><td><strong>核心考点</strong></td></tr></thead><tbody><tr><td class="shade" style="background:#D3DFEE"><strong>中共一大 1921</strong></td><td class="shade" style="background:#D3DFEE">确定党的名称为"中国共产党"；通过第一个纲领和决议；首先集中精力组织工人</td></tr><tr><td><strong>中共二大 1922</strong></td><td>第一次提出反帝反封建的民主革命纲领；开始采取群众路线；最早提出统一战线思想</td></tr><tr><td class="shade" style="background:#D3DFEE"><strong>中共三大 1923</strong></td><td class="shade" style="background:#D3DFEE">决定党员以个人名义加入国民党，同国民党建立统一战线</td></tr><tr><td><strong>国民党一大 1924</strong></td><td>标志第一次国共合作正式形成</td></tr><tr><td class="shade" style="background:#D3DFEE"><strong>八七会议 1927</strong></td><td class="shade" style="background:#D3DFEE">提出"枪杆子里出政权"；提出土地革命是中心问题；从大革命失败到土地革命兴起的转折</td></tr><tr><td><strong>古田会议 1929</strong></td><td>确立党对军队的绝对领导；新型人民军队建设的开端</td></tr><tr><td class="shade" style="background:#D3DFEE"><strong>遵义会议 1935</strong></td><td class="shade" style="background:#D3DFEE">生死攸关的转折点；事实上确立毛泽东的领导地位；解决军事和组织问题</td></tr><tr><td><strong>瓦窑堡会议 1935</strong></td><td>提出抗日民族统一战线；解决政治路线问题；批评"左"倾冒险主义和关门主义</td></tr><tr><td class="shade" style="background:#D3DFEE"><strong>洛川会议 1937</strong></td><td class="shade" style="background:#D3DFEE">实行全面的全民族抗战路线</td></tr><tr><td><strong>六届六中全会 1938</strong></td><td>首次提出"马克思主义中国化"命题</td></tr><tr><td class="shade" style="background:#D3DFEE"><strong>六届七中全会 1945</strong></td><td class="shade" style="background:#D3DFEE">通过《关于若干历史问题的决议》；延安整风胜利结束；为七大召开创造条件</td></tr><tr><td><strong>中共七大 1945</strong></td><td>毛泽东思想确立为指导思想并写入党章；三大优良作风；党在政治上思想上组织上走向成熟</td></tr><tr><td class="shade" style="background:#D3DFEE"><strong>七届二中全会 1949</strong></td><td class="shade" style="background:#D3DFEE">工作重心从农村转移到城市；"两个务必"</td></tr><tr><td><strong>中国人民政治协商会议 1949</strong></td><td>标志着中国新型政党制度正式确立</td></tr><tr><td class="shade" style="background:#D3DFEE"><strong>中共八大 1956</strong></td><td class="shade" style="background:#D3DFEE">分析改造完成后的主要矛盾和主要任务；坚持既反保守又反冒进的方针</td></tr><tr><td><strong>十一届三中全会 1978</strong></td><td>重新确立解放思想实事求是思想路线；工作重点转移到现代化建设；改革开放开端</td></tr><tr><td class="shade" style="background:#D3DFEE"><strong>十一届六中全会 1981</strong></td><td class="shade" style="background:#D3DFEE">通过《关于建国以来党的若干历史问题的决议》；科学评价毛泽东和毛泽东思想</td></tr><tr><td><strong>十二大 1982</strong></td><td>第一次提出"建设有中国特色的社会主义"命题</td></tr><tr><td class="shade" style="background:#D3DFEE"><strong>十三大 1987</strong></td><td class="shade" style="background:#D3DFEE">系统论述社会主义初级阶段理论；概括"一个中心两个基本点"基本路线；邓小平理论轮廓形成</td></tr><tr><td><strong>十四大 1992</strong></td><td>明确建立社会主义市场经济体制的改革目标</td></tr><tr><td class="shade" style="background:#D3DFEE"><strong>十五大 1997</strong></td><td class="shade" style="background:#D3DFEE">邓小平理论确立为党的指导思想；首次提出社会主义初级阶段基本纲领</td></tr><tr><td><strong>十六大 2002</strong></td><td>"三个代表"重要思想；全面建设小康社会奋斗目标</td></tr><tr><td class="shade" style="background:#D3DFEE"><strong>十七大 2007</strong></td><td class="shade" style="background:#D3DFEE">科学发展观；提出"中国特色社会主义理论体系"科学概念</td></tr><tr><td><strong>二十届三中全会 2024</strong></td><td>进一步全面深化改革的重点是深化经济体制改革</td></tr></tbody></table>
+<p><br></p>
+<h3>二、重要纪念日与历史事件</h3>
+<h4>考点27：中国共产党成立105周年（2026年7月1日）</h4>
+<ul class="doc-list">
+<li>中国共产党的初心和使命：为中国人民谋幸福，为中华民族谋复兴</li>
+<li>中国共产党为什么能，中国特色社会主义为什么好，归根到底是马克思主义行，是中国化时代化的马克思主义行</li>
+<li>马克思主义中国化时代化的根本途径：两个结合</li>
+<li>党的自我革命是最显著标志</li>
+</ul>
+<h4>考点28：长征胜利90周年（2026年10月）</h4>
+<ul class="doc-list">
+<li>长征的直接原因：第五次反"围剿"失败</li>
+<li>长征胜利的意义：</li>
+<li>极大地促进了党在政治上和思想上的成熟</li>
+<li>是中国革命转危为安的关键</li>
+<li>实现了从挫折走向胜利的伟大转折</li>
+<li>湘江战役：中央红军突围以来最壮烈、最关键的一仗</li>
+<li>党对军队的绝对领导：发端于南昌起义、奠基于三湾改编、定型于古田会议</li>
+</ul>
+<h4>考点29：孙中山诞辰160周年（2026年11月12日）</h4>
+<ul class="doc-list">
+<li>第一个响亮喊出"振兴中华"口号</li>
+<li>创立兴中会（第一个革命团体）、同盟会（第一个资产阶级革命政党）</li>
+<li>提出三民主义：民族、民权、民生</li>
+<li>领导辛亥革命，推翻清王朝统治，结束君主专制制度</li>
+<li>把旧三民主义发展为新三民主义，实行联俄、联共、扶助农工三大政策</li>
+<li>新三民主义与中共民主革命纲领基本一致，成为国共合作的政治基础</li>
+<li>护法运动失败：标志着整个中国民族资产阶级领导的旧民主主义革命的终结</li>
+</ul>
+<h4>考点30：其他重要历史事件</h4>
+<ul class="doc-list">
+<li>辛亥革命失败的根本原因：在半殖民地半封建的中国，资本主义建国方案行不通</li>
+<li>五四运动：新民主主义革命的开端；第一次全面觉醒</li>
+<li>甲午战争：民族意识开始普遍觉醒</li>
+<li>一二九运动：抗日救亡运动新高潮</li>
+<li>延安整风：反对主观主义以整顿学风（最主要任务）</li>
+<li>三三制原则：共产党、党外进步人士、中间派各占1/3</li>
+<li>土地制度改革：从根本上摧毁中国封建制度根基的社会大变革</li>
+<li>五一口号：奠定了中国共产党领导的多党合作和政治协商制度的基础</li>
+<li>新中国成立初期外交方针：另起炉灶、打扫干净屋子再请客、一边倒</li>
+<li>三反运动：反贪污、反浪费、反官僚主义</li>
+<li>五反运动：反行贿、反偷税漏税、反盗窃国家财产、反偷工减料、反盗窃经济情报</li>
+</ul>
+<p><br></p>
+<h2>第五部分 思想道德与法治</h2>
+<h3>一、人生价值观</h3>
+<ul class="doc-list">
+<li>人的本质是一切社会关系的总和</li>
+<li>社会属性是人的本质属性</li>
+<li>人生目的是人生观的核心</li>
+<li>人生的社会价值是自我价值的基础</li>
+<li>评价人生价值的根本尺度：看实践活动是否符合社会发展客观规律，是否促进历史进步</li>
+<li>社会实践是实现人生价值的必由之路</li>
+</ul>
+<h3>二、社会主义核心价值观</h3>
+<ul class="doc-list">
+<li>国家层面：富强、民主、文明、和谐</li>
+<li>社会层面：自由、平等、公正、法治</li>
+<li>公民层面：爱国、敬业、诚信、友善</li>
+<li>人民性是社会主义核心价值观的根本特性</li>
+<li>民族精神的核心：爱国主义</li>
+<li>时代精神的核心：改革创新</li>
+<li>爱国主义的本质：坚持爱国和爱党、爱社会主义高度统一</li>
+</ul>
+<h3>三、道德</h3>
+<ul class="doc-list">
+<li>劳动是道德起源的首要前提</li>
+<li>道德最基本的功能：认识功能、规范功能、调节功能</li>
+<li>社会主义道德的核心：为人民服务</li>
+<li>社会主义道德的原则：集体主义</li>
+<li>社会公德最基本要求：遵纪守法</li>
+<li>职业道德最低要求：爱岗敬业；最高层次：奉献社会</li>
+</ul>
+<p><br></p>
+<h2>第六部分 2027年时政热点预测（全部展开）</h2>
+<h3>第一梯队（必考，选择+分析都可能出）</h3>
+<h4>时政1：党的二十届五中全会</h4>
+<ul class="doc-list">
+<li>时间：2025年10月（研究"十五五"规划）</li>
+<li>主题：制定国民经济和社会发展第十五个五年规划</li>
+<li>核心考点展开：</li>
+<li>①新发展格局的最新表述</li>
+<li>②高质量发展与现代化产业体系</li>
+<li>③科技自立自强与新型举国体制</li>
+<li>④共同富裕的阶段性目标</li>
+<li>⑤进一步全面深化改革</li>
+<li>⑥推进国家治理体系和治理能力现代化</li>
+<li>可能出分析题角度：</li>
+<li>- 为什么要加快构建新发展格局？</li>
+<li>- 如何理解高质量发展是全面建设社会主义现代化国家的首要任务？</li>
+</ul>
+<h4>时政2：建党105周年七一讲话</h4>
+<ul class="doc-list">
+<li>时间：2026年7月1日</li>
+<li>核心考点展开：</li>
+<li>①马克思主义中国化时代化的最新成果</li>
+<li>②党的自我革命与全面从严治党</li>
+<li>③百年大党的历史经验</li>
+<li>④两个结合的重大意义</li>
+<li>⑤初心和使命：为中国人民谋幸福，为中华民族谋复兴</li>
+<li>可能出分析题角度：</li>
+<li>- 如何理解"中国共产党为什么能，中国特色社会主义为什么好，归根到底是马克思主义行"？</li>
+<li>- 为什么说自我革命是党跳出治乱兴衰历史周期率的第二个答案？</li>
+</ul>
+<h4>时政3：新质生产力</h4>
+<ul class="doc-list">
+<li>提出时间：2023年9月在黑龙江考察时首次提出</li>
+<li>核心内涵：</li>
+<li>- 创新起主导作用</li>
+<li>- 摆脱传统经济增长方式、生产力发展路径</li>
+<li>- 具有高科技、高效能、高质量特征</li>
+<li>特点：创新、质优</li>
+<li>关键：质的有效提升和量的合理增长</li>
+<li>本质：先进生产力的质的飞跃</li>
+<li>核心要素：科技创新</li>
+<li>着力点：以科技创新引领现代化产业体系建设</li>
+<li>【真题考法】</li>
+<li>- 2026年3月《国家创新指数报告2025》：中国排名第9位，较上年提升1位</li>
+<li>- 相比2012年，我国综合排名提升11个位次</li>
+<li>- 从规模增长转向质量提升、从局部突破转向整体能力升级</li>
+<li>可能出分析题角度：</li>
+<li>- 为什么要发展新质生产力？</li>
+<li>- 如何因地制宜发展新质生产力？</li>
+</ul>
+<p><br></p>
+<h3>第二梯队（选择大概率考）</h3>
+<h4>时政4：2026世界人工智能大会 / AI监管</h4>
+<ul class="doc-list">
+<li>核心考点：人工智能是人的意识能动性的特殊表现</li>
+<li>AI不可能真正具有人的意识的四个原因：</li>
+<li>①人类意识是知情意的统一体，AI只是对理性智能的模拟，不具备情感、信念、意志</li>
+<li>②社会性是人的意识所固有的本质属性，AI不可能真正具备人类的社会属性</li>
+<li>③人类自然语言是思维的物质外壳，AI难以完全理解自然语言的真实意义</li>
+<li>④AI能获得可以化约为数字信号的内容，但人脑中总有许多东西无法被化约</li>
+<li>【真题考法】</li>
+<li>- 中央网信办部署推进规范短视频内容标注工作</li>
+<li>- 生成式AI内容监管</li>
+<li>- 人类加大对生成式AI的监管 → 真理尺度与价值尺度统一</li>
+<li>- 实践使世界二重化为现实世界与虚拟世界</li>
+</ul>
+<h4>时政5：长征胜利90周年</h4>
+<ul class="doc-list">
+<li>时间：1936年10月红二、四方面军到达甘肃会宁，三大主力会师</li>
+<li>长征胜利的意义：</li>
+<li>极大地促进了党在政治上和思想上的成熟</li>
+<li>是中国革命转危为安的关键</li>
+<li>实现了从挫折走向胜利的伟大转折</li>
+<li>湘江战役：中央红军突围以来最壮烈、最关键的一仗</li>
+<li>长征精神：把全国人民和中华民族的根本利益看得高于一切，坚定革命的理想和信念</li>
+<li>党对军队的绝对领导：发端于南昌起义、奠基于三湾改编、定型于古田会议</li>
+</ul>
+<h4>时政6：孙中山诞辰160周年</h4>
+<ul class="doc-list">
+<li>时间：1866年11月12日</li>
+<li>核心贡献：</li>
+<li>- 第一个响亮喊出"振兴中华"口号</li>
+<li>- 创立兴中会（第一个革命团体）、同盟会（第一个资产阶级革命政党）</li>
+<li>- 提出三民主义：民族、民权、民生</li>
+<li>- 领导辛亥革命，推翻清王朝统治，结束君主专制制度</li>
+<li>- 把旧三民主义发展为新三民主义，实行联俄、联共、扶助农工三大政策</li>
+<li>新三民主义与中共民主革命纲领基本一致，成为国共合作的政治基础</li>
+<li>可能考点：祖国统一大业</li>
+</ul>
+<h4>时政7：景德镇手工瓷业遗存申遗成功</h4>
+<ul class="doc-list">
+<li>时间：2026年7月25日，联合国教科文组织第48届世界遗产大会</li>
+<li>地位：我国第61项世界遗产</li>
+<li>意义：</li>
+<li>- 加强文化遗产系统性保护传承利用的生动实践</li>
+<li>- 构建中华文明标识体系的生动实践</li>
+<li>- 深入学习贯彻习近平文化思想的生动实践</li>
+<li>习近平指出：世界文化和自然遗产是人类文明发展和自然演进的重要成果，也是促进不同文明交流互鉴的重要载体</li>
+<li>文明交流：以文明交流超越文明隔阂、文明互鉴超越文明冲突、文明共存超越文明优越</li>
+</ul>
+<h4>时政8：美丽中国建设 / 双碳目标</h4>
+<ul class="doc-list">
+<li>"十四五"生态文明建设：以降碳为重点战略方向</li>
+<li>碳达峰、碳中和目标融入生态文明体系</li>
+<li>美丽中国建设"1+1+N"实施体系基本建立</li>
+<li>三大战略区域美丽中国先行区建设高起点起步</li>
+<li>建设美丽中国的重大意义：</li>
+<li>①厚植中国式现代化绿色底色的必由之路</li>
+<li>②实现高质量发展的应有之义</li>
+<li>③共建清洁美丽世界的中国贡献</li>
+</ul>
+<h4>时政9：中美关系 / 乒乓外交55周年</h4>
+<ul class="doc-list">
+<li>乒乓外交：1971年，55周年纪念</li>
+<li>2026年5月，美国总统特朗普受邀访华</li>
+<li>中美双方一致认为：中美关系是当今世界最重要的双边关系，只能搞好不能搞坏</li>
+<li>中美双方的最大公约数：互利共赢</li>
+</ul>
+<h4>时政10：两岸关系 / 习近平会见郑文灿访问团</h4>
+<ul class="doc-list">
+<li>时间：2026年4月10日</li>
+<li>习近平指出：大陆和台湾同属一个中国，中国是中华民族的共同家园</li>
+<li>两岸同胞要守护好、建设好这个共同家园，核心是促进中华儿女大团结</li>
+</ul>
+<p><br></p>
+<h3>第三梯队（选择可能考）</h3>
+<h4>时政11：统筹发展和安全</h4>
+<ul class="doc-list">
+<li>总体国家安全观：以人民安全为宗旨，以政治安全为根本，以经济安全为基础</li>
+<li>国家安全是民族复兴的根基，社会稳定是国家强盛的前提</li>
+<li>构建新安全格局必须把政治安全放在首要位置</li>
+<li>粮食安全、能源安全、科技安全</li>
+</ul>
+<h4>时政12：中国特色大国外交</h4>
+<ul class="doc-list">
+<li>推动构建人类命运共同体</li>
+<li>构建新型国际关系：相互尊重、公平正义、合作共赢</li>
+<li>一带一路13周年</li>
+<li>全球治理观</li>
+</ul>
+<h4>时政13：文化自信与文明交流</h4>
+<ul class="doc-list">
+<li>两个结合中的"同中华优秀传统文化相结合"</li>
+<li>文明交流互鉴</li>
+<li>文化兴则国家兴，文化强则民族强</li>
+<li>文化的核心是价值观</li>
+</ul>
+</article>
+</body>
+</html>
