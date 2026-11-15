@@ -233,6 +233,7 @@ body{
 }
 .file .ext.pdf{color:var(--red);background:#F7EDEA;border-color:#E5D3CB}
 .file .ext.doc{color:var(--blue);background:#EBF0F2;border-color:#D3DFE2}
+.file .ext.web{color:var(--pine);background:#EDF2EE;border-color:#D3E0D7}
 .file .name{flex:1;font-family:var(--serif);font-size:15px;letter-spacing:.02em}
 .file .name small{display:block;font-family:var(--sans);font-size:11.5px;color:var(--ink3);letter-spacing:.06em;margin-top:2px}
 .file .dl{font-size:12px;color:var(--ink3);letter-spacing:.08em;white-space:nowrap}
@@ -386,6 +387,7 @@ footer .mark{font-family:var(--serif);color:var(--ochre);letter-spacing:.2em}
 [data-theme="dark"] .file .ext{background:#2A2E34;color:var(--ochre)}
 [data-theme="dark"] .file .ext.pdf{background:#3A2424;border-color:#5C3434;color:#E79595}
 [data-theme="dark"] .file .ext.doc{background:#20313B;border-color:#334A57;color:#A3C8DB}
+[data-theme="dark"] .file .ext.web{background:#22302A;border-color:#34473D;color:#9CC3A9}
 [data-theme="dark"] .tips{background:rgba(29,32,37,.55)}
 [data-theme="dark"] #previewDialog{
   border-color:#3C414A;
@@ -433,6 +435,7 @@ footer .mark{font-family:var(--serif);color:var(--ochre);letter-spacing:.2em}
   .file .ext{background:#f2f2f2!important;border-color:#ccc!important;color:#555!important}
   .file .ext.pdf{color:#8f1f1f!important}
   .file .ext.doc{color:#1F4E6B!important}
+  .file .ext.web{color:#2f5540!important}
   .tips kbd{background:#fff!important;border-color:#bbb!important;box-shadow:none!important}
   a{color:inherit!important;text-decoration:none!important}
 }
@@ -547,10 +550,17 @@ footer .mark{font-family:var(--serif);color:var(--ochre);letter-spacing:.2em}
     <div class="section-head">
       <h2 id="files-head">其他资料</h2>
       <span class="rule"></span>
-      <span class="count">06</span>
+      <span class="count">07</span>
     </div>
 
     <div class="files">
+      <a class="file" href="https://www.markji.com/public/one-page.html?#knowledge" target="_blank" rel="noopener">
+        <span class="ext web">网页</span>
+        <span class="name">帕拉迪宇一页纸工作台
+          <small>在线版 · markji 知识地图</small>
+        </span>
+        <span class="dl">在线打开 · 新标签页</span>
+      </a>
       <a class="file" href="27%E8%80%83%E7%A0%94%E6%BE%84%E6%BD%87%E5%AE%87%E6%94%BF%E6%B2%BB%E4%B8%80%E9%A1%B5%E7%BA%B8.pdf" download
          data-preview="pdf" data-title="27考研澄潇宇政治一页纸"
          data-src="27%E8%80%83%E7%A0%94%E6%BE%84%E6%BD%87%E5%AE%87%E6%94%BF%E6%B2%BB%E4%B8%80%E9%A1%B5%E7%BA%B8.pdf">
