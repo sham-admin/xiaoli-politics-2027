@@ -52,6 +52,7 @@ h1{margin:0; font-size:clamp(26px,6vw,34px); font-weight:700; letter-spacing:.06
 .sub{margin:6px 0 0; color:var(--ink2); font-size:13px; letter-spacing:.02em}
 .prog{margin-left:auto; text-align:right; flex:0 0 auto; padding-top:18px}
 .prog .num{font-family:ui-sans-serif, system-ui, sans-serif; font-size:22px; font-weight:600; letter-spacing:.02em}
+.prog .of{font-family:ui-sans-serif, system-ui, sans-serif; font-size:13px; color:var(--ink2); margin-left:3px}
 .prog .lab{color:var(--ink2); font-size:11px; letter-spacing:.1em; display:block}
 
 /* 工具条 */
@@ -166,10 +167,16 @@ main{display:block; margin-top:8px}
 }
 .p-body{padding:6px 18px 16px}
 .p-body p{margin:11px 0; font-size:14.5px; line-height:1.85; text-align:justify}
+.p-body h3.sec-title{
+  margin:17px 0 4px; font-size:11px; letter-spacing:.16em; line-height:1.6;
+  color:var(--blue); font-weight:700;
+}
+.p-body h3.sec-title:first-child{margin-top:4px}
 .p-body p.note{
   font-size:13.5px; color:var(--ink2); border-left:2px solid var(--line);
   padding-left:10px; margin:10px 0;
 }
+.p-body p.note.warn{border-left-color:var(--red); color:var(--ink)}
 .p-body p:first-child{margin-top:4px}
 .done{
   display:flex; gap:10px; align-items:center; justify-content:space-between;
@@ -252,8 +259,8 @@ main{display:block; margin-top:8px}
       <p class="sub">史纲 · 毛中特 · 1840—2022 · 点击条目查看原文</p>
     </div>
     <div class="prog">
-      <span class="num" id="progNum">130</span>
-      <span class="lab">个事件</span>
+      <span class="num" id="progNum">130</span><span class="of" id="progTotal">/ 130</span>
+      <span class="lab">显示 / 全部</span>
     </div>
   </header>
 
@@ -417,6 +424,7 @@ function applyFilters() {
     if (flags[i]) visible.push(i);
   });
   document.getElementById('progNum').textContent = visible.length;
+  document.getElementById('progTotal').textContent = '/ ' + NODES.length;
   if (visible.length) {
     const titleHit = query
       ? visible.filter(i => NODES[i].title.toLowerCase().indexOf(query) !== -1)[0]
@@ -442,8 +450,17 @@ function renderPanel(i) {
   const body = document.getElementById('pBody');
   body.innerHTML = '';
   n.paras.forEach(p => {
+    if (/^（[一二三四五六七八九十]+）/.test(p)) {
+      const h = document.createElement('h3');
+      h.className = 'sec-title';
+      h.textContent = p;
+      body.appendChild(h);
+      return;
+    }
     const el = document.createElement('p');
-    if (/^\*?\s*补充/.test(p)) el.className = 'note';
+    if (/^\*?\s*(补充|【易错)/.test(p)) {
+      el.className = 'note' + (/易错/.test(p) ? ' warn' : '');
+    }
     el.textContent = p;
     body.appendChild(el);
   });
