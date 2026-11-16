@@ -189,6 +189,7 @@ body[data-theme=dark] .opt.wrong b{color:#2b1a1f}
     </div>
     <span class="spacer"></span>
     <button id="drawBtn" type="button" title="按单选/多选数量随机抽题，做完结算正确率">抽卡</button>
+    <button id="quitBtn" type="button" hidden title="结束本轮抽卡，已答记录保留">退出抽卡</button>
     <button id="resetBtn" type="button" title="清除本机答题记录">清空记录</button>
   </div>
 
@@ -214,7 +215,7 @@ body[data-theme=dark] .opt.wrong b{color:#2b1a1f}
   <main id="cardHost"></main>
 
   <footer class="foot">
-    <span>答案与解析依据《全真模拟 720 题·解析册》；键盘 <span class="kbd">A</span>–<span class="kbd">D</span> 选择，<span class="kbd">Enter</span> 下一题。</span>
+    <span>答案与解析依据《全真模拟 720 题·解析册》；<span class="kbd">A</span>–<span class="kbd">D</span> 选择，<span class="kbd">←</span><span class="kbd">→</span> 翻题，<span class="kbd">Enter</span> 下一题。</span>
     <span><a href="index.html">← 回到资料室</a></span>
   </footer>
 </div>
@@ -332,6 +333,7 @@ body[data-theme=dark] .opt.wrong b{color:#2b1a1f}
     });
     host.querySelectorAll("button").forEach(function(b){ b.disabled = !!state.session; });
     $("drawBtn").disabled = !!state.session;
+    $("quitBtn").hidden = !state.session;
   }
 
   function renderStats(){
@@ -435,6 +437,11 @@ body[data-theme=dark] .opt.wrong b{color:#2b1a1f}
     }
 
     actions.appendChild(el("span", "spacer"));
+    var backBtn = el("button", "", "← 上一题");
+    backBtn.type = "button";
+    backBtn.disabled = state.session ? state.session.pos === 0 : state.pos === 0;
+    backBtn.onclick = function(){ go(-1); };
+    actions.appendChild(backBtn);
     var isLast = state.session
       ? state.session.pos + 1 >= state.session.items.length
       : state.pos + 1 >= state.deck.length;
@@ -529,12 +536,14 @@ body[data-theme=dark] .opt.wrong b{color:#2b1a1f}
   function go(step){
     if(state.session){
       var s = state.session;
-      if(s.pos + 1 >= s.items.length){
+      if(step > 0 && s.pos + 1 >= s.items.length){
         s.done = true;
         renderResult();
         return;
       }
-      s.pos += 1;
+      var next = s.pos + step;
+      if(next < 0 || next >= s.items.length) return;
+      s.pos = next;
       state.picked = [];
       state.explainOpen = null;
       render();
@@ -542,6 +551,7 @@ body[data-theme=dark] .opt.wrong b{color:#2b1a1f}
     }
     var n = state.deck.length;
     if(!n) return;
+    if(step < 0 && state.pos === 0) return;
     state.pos = (state.pos + step + n) % n;
     state.picked = [];
     state.explainOpen = null;
@@ -671,6 +681,9 @@ body[data-theme=dark] .opt.wrong b{color:#2b1a1f}
     $("drawPanel").hidden ? openDraw() : ($("drawPanel").hidden = true);
   };
   $("drawCancel").onclick = function(){ $("drawPanel").hidden = true; };
+  $("quitBtn").onclick = function(){
+    if(confirm("结束本轮抽卡？已答的题目会保留在总进度里。")) exitSession();
+  };
   $("drawStart").onclick = startDraw;
   $("resetBtn").onclick = function(){
     if(!Object.keys(state.records).length) return;
@@ -707,6 +720,8 @@ body[data-theme=dark] .opt.wrong b{color:#2b1a1f}
       e.preventDefault();
       return;
     }
+    if(e.key === "ArrowLeft"){ go(-1); e.preventDefault(); return; }
+    if(e.key === "ArrowRight"){ go(1); e.preventDefault(); return; }
     if(e.key === "Enter"){
       if(!state.session) go(1);
       else if(current() && isAnswered(current())) go(1);
