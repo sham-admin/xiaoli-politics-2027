@@ -194,6 +194,11 @@ body.sheet-open{overflow:hidden}
 .modal-head button{font-size:11px;padding:6px 9px}
 .modal-body{padding:14px 18px 18px;overflow:auto;font:16px/1.95 var(--serif);text-align:justify}
 body.modal-open{overflow:hidden}
+/* 宽屏时悬浮窗靠左，放在正文左侧空白处；窄屏仍居中 */
+@media (min-width: 1400px){
+  .modal{left:20px;top:50%;transform:translateY(-46%);width:min(430px, calc((100vw - 820px)/2 - 32px));max-height:86dvh}
+  .modal.open{transform:translateY(-50%)}
+}
 .info-btn{border-style:dashed;color:var(--accent)}
 .info-btn:hover{background:var(--soft)}
 .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:20px;font-size:11px;color:var(--muted)}
