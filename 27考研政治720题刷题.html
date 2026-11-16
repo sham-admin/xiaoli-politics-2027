@@ -515,7 +515,7 @@ body.modal-open{overflow:hidden}
       actions.appendChild(submit);
     }
     if(q.notes){
-      var noteBtn = el("button", "info-btn", "划题笔记");
+      var noteBtn = el("button", "info-btn", "刷题笔记");
       noteBtn.type = "button";
       noteBtn.onclick = function(){ openInfo("notes", q); };
       actions.appendChild(noteBtn);
@@ -570,7 +570,7 @@ body.modal-open{overflow:hidden}
         if(para.trim()) body.appendChild(el("p", "explain-body", para.trim()));
       });
     } else if(kind === "notes"){
-      title = "划题笔记";
+      title = "刷题笔记";
       (q.notes || "").split(/\n+|(?=\d{1,2}）)/).forEach(function(para){
         if(para.trim()) body.appendChild(el("p", "explain-body", para.trim()));
       });
